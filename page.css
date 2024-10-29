@@ -1,0 +1,494 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 60px;
+    color: white;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Odkazy s původními přechody */
+nav ul li a.omne {
+    background: linear-gradient(to right, white,grey, black 80%);
+}
+
+nav ul li a.florbal {
+    background: linear-gradient(to right, red, black, green);
+    
+}
+
+nav ul li a.kytara {
+    background: linear-gradient(to right, blue, rgb(0, 0, 255), black 80%);
+}
+
+/* Nové odkazy s přechody */
+nav ul li a.vic {
+    background: linear-gradient(to right, gold, black);
+    color: white;
+}
+
+nav ul li a.tyrkys {
+    background: linear-gradient(to right, gold, rgb(153, 101, 21), black 70%);
+    color: white;
+}
+
+/* Hover efekt */
+nav ul li a:hover {
+    color: #ffcc00;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    text-align: center;
+    max-width: 900px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#florbal {
+    margin: 0 10px; /* Zmenšení okrajů na 10px na levé a pravé straně */
+    padding: 0; /* Odstranění vnitřních okrajů */
+    margin-top: 60px; /* Přidání horního okraje pro posunutí dolů */
+}
+
+#florbal .content {
+    max-width: 1200px; /* Maximální šířka kontejneru */
+    margin: 0 auto; /* Vycentrování kontejneru */
+    padding: 150px 10px; /* Přidání vnitřního odsazení na vrchu (100px) */
+}
+#florbal h1 {
+    margin-left: 10px; /* Odsazení textu zleva */
+    margin-top: 30px; /* Odsazení od vrchu */
+}
+
+#florbal p {
+    margin-left: 10px; /* Odsazení textu zleva */
+    margin-top: -20px; /* Odsazení od vrchu */
+    margin-bottom: 40px; /* Zvýšená mezera pod textem odstavce */
+}
+
+/* Stylizace fotek pro stránku Florbal */
+.photos {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Mezera mezi fotkami */
+    margin: 20px 0;
+}
+
+.photos img {
+    height: 70vh; /* Zvýšení výšky fotek */
+    width: auto; /* Zachování poměru stran */
+    max-width: 400px; /* Maximální šířka pro kontrolu velikosti */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Přidání box-shadow pro hover efekt */
+}
+
+.photos img:hover {
+    transform: scale(1.1); /* Efekt při najetí */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Přidání stínu při najetí */
+}
+
+/* Stylizace odkazů pod fotkami */
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 45px;
+
+}
+
+.red-link, .green-link {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: white;
+    border: 2px solid #C0C0C0;
+    border-radius: 30px; /* Zakulacení okrajů */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Původní stín */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+/* Zachování původních barevných přechodů */
+.red-link {
+    background: linear-gradient(to right, red 40%, #800000 50%, black 60%);
+    position: relative;
+    left: -305px; /* Původní pozice odkazu */
+}
+
+.green-link {
+    background: linear-gradient(to right, black 40%, #004d00 50%, green 60%);
+    position: relative;
+    left: 308px; /* Původní pozice odkazu */
+}
+
+/* Hover efekt s prohozenými barvami */
+.red-link:hover {
+    background: linear-gradient(to right, black 40%, #800000 50%, red 60%);
+    color: white;
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Zesílený stín na hover */
+}
+
+.green-link:hover {
+    background: linear-gradient(to right, green 40%, #004d00 50%, black 60%);
+    color: white;   
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Zesílený stín na hover */
+}
+
+/* Upravíme mezery mezi fotkami */
+.photos > img:nth-child(1) {
+    margin-right: 10px; /* Menší mezera mezi první a druhou fotkou */
+    margin-left: -90px;
+}
+
+.photos > img:nth-child(2) {
+    margin-right: 50px; /* Větší mezera mezi druhou a třetí fotkou */
+    /* Posun druhé fotky vlevo */
+}
+
+.photos > img:nth-child(3) {
+    margin-left: 40px; /* Menší mezera mezi druhou a třetí fotkou */
+}
+
+.photos > img:nth-child(4) {
+    margin-left: 10px; /* Menší mezera mezi třetí a čtvrtou fotkou */
+}
+
+/* Styl pro Main stránku (psací stroj) */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+}
+
+.typing-text {
+    font-size: 2em;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    width: 0;
+    animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+    margin-bottom: 20px;
+}
+
+/* Instagram ikona */
+.social-links a.instagram {
+    background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* Snapchat ikona */
+.social-links a.snapchat {
+    background: linear-gradient(to right, #fffc00, #ffc107);
+}
+
+/* TikTok ikona */
+.social-links a.tiktok {
+    background: linear-gradient(to right, #010101, #3b5998);
+}
+
+/* Facebook ikona */
+.social-links a.facebook {
+    background: linear-gradient(to right, #4267B2, #3b5998);
+}
+
+/* Hover efekt na ikony */
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+/* Ostatní přechody a styly zůstávají */
+body#index {
+    background: linear-gradient(to bottom, white, rgb(200, 200, 200), black 70%);
+    color: black;
+}
+
+body#florbal {
+    background: linear-gradient(to bottom, black 70%, black 100%), 
+                linear-gradient(to right, red, black 50%, green);
+    background-blend-mode: screen;
+}
+
+body#kytara {
+    background: linear-gradient(to bottom, blue, rgb(0, 0, 255), black 75%);
+}
+
+body#main {
+    background: linear-gradient(to bottom, #333333, #000000);
+    color: white;
+}
+
+body#ss {
+    background: linear-gradient(to bottom, #000000, #333333);
+    color: white;
+    margin-top: -75px;
+}
+
+.social-links a {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.social-links img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+    transform: scale(1.1);
+}
+
+/* Stylizace pro stránku Main */
+#main-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to left, #000000, #C0C0C0, #8A2BE2);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Blikající podtržítko */
+.blinking-cursor {
+    font-weight: bold;
+    font-size: 1em;
+    color: black;
+    display: inline;
+    animation: blink 1s step-end infinite;
+}
+
+/* Animace pro efekt psacího stroje */
+.typewriter p {
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif; /* Nový moderní font */
+    font-size: 3em; /* Zvýšení velikosti písma */
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    max-width: 0;
+    animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Stín pro zvýraznění */
+}
+
+/* Blikání podtržítka */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Efekt psacího stroje */
+@keyframes typing {
+    from { max-width: 0; }
+    to { max-width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+}
+
+/* Stylizace tlačítek s moderním designem */
+.button-container .btn {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    padding: 12px 25px;
+    margin: 15px;
+    margin-left: 0; /* Nastavení levého okraje na 0 */
+    margin-right: 15px; /* Odsazení vpravo */
+    text-decoration: none;
+    transform: translateX(-15px); /* Posunutí tlačítek vlevo o 10px */
+    color: white;
+    background-image: linear-gradient(to right, #000000, #8A2BE2);
+    border: 2px solid #C0C0C0;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-container .btn:hover {
+    background-image: linear-gradient(to right, #C0C0C0, #8A2BE2);
+    color: black;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex; /* Zajištění, že tlačítka budou vedle sebe */
+    justify-content: flex-start; /* Zarovnání tlačítek na začátek kontejneru */
+    margin-left: 82px; /* Posun kontejneru vlevo (přizpůsobte hodnotu podle potřeby) */
+}
+
+#main-page .btn {
+    font-size: 1.7em;
+    padding: 12px 25px;
+    margin: 15px;
+    text-decoration: none;
+    color: white;
+    background-image: linear-gradient(to right, #000000, #8A2BE2);
+    border: 2px solid #C0C0C0;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#main-page .btn:hover {
+    background-image: linear-gradient(to right, #C0C0C0, #8A2BE2);
+    color: black;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+body#ss {
+    background: linear-gradient(to bottom, gold, rgb(153, 101, 21), black 60%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 110vh;
+}
+
+/* Kontejner pro oba textové prvky */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 110px; /* Posune oba texty níže */
+    margin-bottom: 10px; /* Nastavuje mezeru mezi texty a odkazy */
+}
+
+body#ss h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    font-size: 3em;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.corner-link { 
+    font-family: 'Times New Roman', Times, serif;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.5em; /* Velikost symbolu $ */
+    color: white; /* Barva textu */
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.corner-link:hover {
+    transform: scale(1.5); /* Mírné zvětšení při najetí myší */
+}
+
+/* Specifické stylování pro fotky na stránce Kryštof */
+.kryštof-fotky {
+    margin-top: 17px; /* Posune fotky o 20px dolů */
+}
+
+/* Ostatní přechody a styly zůstávají */
+body#index {
+    background: linear-gradient(to bottom, white, rgb(200, 200, 200), black 70%);
+    color: black;
+}
+
+/* Specifické styly pro obsah na stránce O mně */
+#ome .content { /* Tímto se zajistí, že se styly aplikují jen na tuto stránku */
+    max-width: 800px; /* Omezí šířku obsahu pro lepší čitelnost */
+    margin: 0 auto; /* Vycentruje obsah na stránce */
+    padding: 20px; /* Přidá prostor kolem obsahu */
+    line-height: 1.6; /* Přidá lepší čitelnost textu */
+    text-align: center; /* Vycentruje text */
+}
+
+/* Styly pro nadpis na stránce O mně */
+#ome .content h1 {
+    font-family: 'Times New Roman', Times, serif; /* Ponechá nastavení písma */
+}
+
+/* Styly pro text v odstavci na stránce O mně */
+#ome .content p {
+    font-family: 'Times New Roman', Times, serif; /* Ponechá nastavení písma */
+    text-align: justify; /* Zarovná text do bloku */
+    margin-bottom: 20px; /* Přidá prostor pod odstavcem */
+}
+
+#ome .photos {
+    margin-left: 1000px; /* Posune fotky 20px doprava */
+    display: inline-block; /* Umožní fotkám být vedle sebe */
+}
+
+#ome .kryštof-fotky {
+    display: inline-block; /* Umožní fotkám být vedle sebe */
+    width: 45%; /* Nastaví šířku fotek */
+    margin: 10px; /* Mezery mezi fotkami */
+}
