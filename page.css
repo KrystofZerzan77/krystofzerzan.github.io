@@ -101,12 +101,12 @@ p {
 }
 #florbal h1 {
     margin-left: 10px; /* Odsazení textu zleva */
-    margin-top: 30px; /* Odsazení od vrchu */
+    margin-top: 60px; /* Odsazení od vrchu */
 }
 
 #florbal p {
-    margin-left: 10px; /* Odsazení textu zleva */
-    margin-top: -20px; /* Odsazení od vrchu */
+    margin-left: -100px; /* Odsazení textu zleva */
+    margin-top:   0px; /* Odsazení od vrchu */
     margin-bottom: 40px; /* Zvýšená mezera pod textem odstavce */
 }
 
@@ -159,13 +159,13 @@ p {
 .red-link {
     background: linear-gradient(to right, red 40%, #800000 50%, black 60%);
     position: relative;
-    left: -305px; /* Původní pozice odkazu */
+    left: -311px; /* Původní pozice odkazu */
 }
 
 .green-link {
     background: linear-gradient(to right, black 40%, #004d00 50%, green 60%);
     position: relative;
-    left: 308px; /* Původní pozice odkazu */
+    left: 297px; /* Původní pozice odkazu */
 }
 
 /* Hover efekt s prohozenými barvami */
@@ -186,7 +186,7 @@ p {
 /* Upravíme mezery mezi fotkami */
 .photos > img:nth-child(1) {
     margin-right: 10px; /* Menší mezera mezi první a druhou fotkou */
-    margin-left: -90px;
+    margin-left: -110px;
 }
 
 .photos > img:nth-child(2) {
@@ -491,4 +491,40 @@ body#index {
     display: inline-block; /* Umožní fotkám být vedle sebe */
     width: 45%; /* Nastaví šířku fotek */
     margin: 10px; /* Mezery mezi fotkami */
+}
+
+.kytara-photos {
+    display: flex; /* Použití Flexboxu pro horizontální zarovnání */
+    justify-content: center; /* Zarovnáno na střed */
+    gap: 30px; /* Mezera mezi fotkami */
+    margin: 20px 0; /* Okraje pro vertikální mezeru */
+}
+
+.kytara-photos .kytara-fotky {
+    height: 60vh; /* Mírně zmenšená výška fotek (původně 70vh) */
+    width: auto; /* Zachování poměru stran */
+    max-width: 350px; /* Mírně zmenšená maximální šířka (původně 400px) */
+    object-fit: cover; /* Přizpůsobení obrázků bez deformace */
+    border-radius: 10px; /* Zaoblení rohů */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Plynulý přechod pro zvětšení a stín */
+}
+
+/* Efekt při najetí myší pro obrázky na stránce Kytara */
+.kytara-photos .kytara-fotky:hover {
+    transform: scale(1.1); /* Zvýšení o 10% při hoveru */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Přidání stínu při najetí */
+}
+
+.kytara-title {
+    margin-top: -1110x; /* Menší mezera nad nadpisem */
+    font-family: 'Times New Roman', Times, serif; /* Přidání stylu písma */
+    text-align: center; /* Zarovnání na střed */
+}
+
+.kytara-paragraph {
+    margin-left: 420px; 
+    margin-right: 420px;
+    padding: 10px; /* Vnitřní okraje pro odstavce */
+    font-family: 'Times New Roman', Times, serif; /* Styl písma */
+    text-align: center; /* Zarovnání na střed */
 }
