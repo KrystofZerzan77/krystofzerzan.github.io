@@ -516,7 +516,7 @@ body#index {
 }
 
 .kytara-title {
-    margin-top: -1110x; /* Menší mezera nad nadpisem */
+    margin-top: 100; /* Menší mezera nad nadpisem */
     font-family: 'Times New Roman', Times, serif; /* Přidání stylu písma */
     text-align: center; /* Zarovnání na střed */
 }
