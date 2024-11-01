@@ -76,7 +76,10 @@ nav ul li a:hover {
 .container {
     text-align: center;
     max-width: 900px;
+    overflow-x: auto; /* Vytvoří horizontální posuvník, pokud je obsah širší než okno */
+    white-space: nowrap; /* Zabrání zalomení obsahu na další řádek */
 }
+
 
 h1 {
     font-size: 3em;
@@ -100,12 +103,13 @@ p {
     padding: 150px 10px; /* Přidání vnitřního odsazení na vrchu (100px) */
 }
 #florbal h1 {
-    margin-left: 10px; /* Odsazení textu zleva */
-    margin-top: 60px; /* Odsazení od vrchu */
+    margin-left: 0px; /* Odsazení textu zleva */
+    margin-top: 110px; /* Odsazení od vrchu */
 }
 
 #florbal p {
-    margin-left: -100px; /* Odsazení textu zleva */
+    text-align: center;
+
     margin-top:   0px; /* Odsazení od vrchu */
     margin-bottom: 40px; /* Zvýšená mezera pod textem odstavce */
 }
@@ -120,8 +124,7 @@ p {
 
 .photos img {
     height: 70vh; /* Zvýšení výšky fotek */
-    width: auto; /* Zachování poměru stran */
-    max-width: 400px; /* Maximální šířka pro kontrolu velikosti */
+    width: 350px;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Přidání box-shadow pro hover efekt */
@@ -159,13 +162,13 @@ p {
 .red-link {
     background: linear-gradient(to right, red 40%, #800000 50%, black 60%);
     position: relative;
-    left: -311px; /* Původní pozice odkazu */
+    left: -272px; /* Původní pozice odkazu */
 }
 
 .green-link {
     background: linear-gradient(to right, black 40%, #004d00 50%, green 60%);
     position: relative;
-    left: 297px; /* Původní pozice odkazu */
+    left: 323px; /* Původní pozice odkazu */
 }
 
 /* Hover efekt s prohozenými barvami */
@@ -186,7 +189,7 @@ p {
 /* Upravíme mezery mezi fotkami */
 .photos > img:nth-child(1) {
     margin-right: 10px; /* Menší mezera mezi první a druhou fotkou */
-    margin-left: -110px;
+    margin-left: 0px;
 }
 
 .photos > img:nth-child(2) {
@@ -257,12 +260,14 @@ body#index {
 
 body#florbal {
     background: linear-gradient(to bottom, black 70%, black 100%), 
-                linear-gradient(to right, red, black 50%, green);
+                linear-gradient(to right, red, black 51.5%, green);
     background-blend-mode: screen;
+    background-attachment: fixed; /* Připnutí pozadí */
 }
 
 body#kytara {
     background: linear-gradient(to bottom, blue, rgb(0, 0, 255), black 75%);
+    background-attachment: fixed; /* Připnutí pozadí */
 }
 
 body#main {
@@ -458,6 +463,7 @@ body#ss h1 {
 /* Ostatní přechody a styly zůstávají */
 body#index {
     background: linear-gradient(to bottom, white, rgb(200, 200, 200), black 70%);
+    background-attachment: fixed;
     color: black;
 }
 
@@ -472,6 +478,7 @@ body#index {
 
 /* Styly pro nadpis na stránce O mně */
 #ome .content h1 {
+    margin-top: -100px;
     font-family: 'Times New Roman', Times, serif; /* Ponechá nastavení písma */
 }
 
@@ -516,15 +523,47 @@ body#index {
 }
 
 .kytara-title {
-    margin-top: 100; /* Menší mezera nad nadpisem */
+    margin-top: -45px; /* Menší mezera nad nadpisem */
     font-family: 'Times New Roman', Times, serif; /* Přidání stylu písma */
     text-align: center; /* Zarovnání na střed */
 }
 
 .kytara-paragraph {
-    margin-left: 420px; 
-    margin-right: 420px;
+    margin-left: 150px; 
+    margin-right: 150px;
     padding: 10px; /* Vnitřní okraje pro odstavce */
     font-family: 'Times New Roman', Times, serif; /* Styl písma */
     text-align: center; /* Zarovnání na střed */
+}
+
+
+/* Pro tablety nebo menší obrazovky */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column; /* Změní rozložení na vertikální na užších obrazovkách */
+        align-items: center;    /* Zarovná prvky na střed */
+    }
+
+    .element {
+        width: 90%; /* Upraví šířku jednotlivých prvků */
+        margin-bottom: 20px; /* Přidá mezery mezi prvky pro lepší čitelnost */
+    }
+}
+
+/* Pro mobilní zařízení */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px; /* Sníží okraje kolem obsahu */
+    }
+
+    .element {
+        width: 100%; /* Prvky zabírají plnou šířku obrazovky */
+        margin-bottom: 15px;
+    }
+
+    img, table {
+        max-width: 100%; /* Zajistí, že se obrázky a tabulky přizpůsobí šířce obrazovky */
+        height: auto;
+    }
 }
